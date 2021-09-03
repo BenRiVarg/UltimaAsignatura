@@ -1,0 +1,19 @@
+#barraNav {
+  background-image: linear-gradient(
+    to right,
+    rgb(39, 121, 143),
+    rgb(100, 201, 167)
+  );
+}
+
+#titular {
+  color: #19a8a0;
+}
+
+#footer {
+  background-color: #0a423f;
+}
+.imgNoticia {
+  width: 20rem;
+  height: 10rem;
+}

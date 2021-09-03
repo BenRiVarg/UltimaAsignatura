@@ -1,0 +1,63 @@
+{% extends "paginas/cabezera.html" %}
+
+{% block titulo %} Gestor de Materiales de la UTM {% endblock %}
+
+{% block contenido %}
+<div class="container-fluid " >
+    <div class="row pt-5 mt-5">
+        <div class="col text-center">
+            <p class="display-4">Practica: {{practica.nombrePractica}}</p>
+           <div class="row">
+               <div class="col">
+                    <form action="">
+                
+                    
+                    <div class="row mx-auto mt-3">
+                        <div class="col-6 pe-0 me-0 ">
+                            <p class="form-label fw-bold">Grupo:</p>
+                        </div>
+                        <div class="col-4 ps-0 ms-0">
+                           <p>{{practica.grupo}}</p>
+                        </div>
+                    </div>
+                   
+                    <div class="row mx-auto mt-3">
+                        <div class="col-6 pe-0 me-0 ">
+                            <p class="form-label fw-bold">Hora:</p>
+                        </div>
+                        <div class="col-4 ps-0 ms-0">
+                            <p> {{practica.hora}}</p>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mt-3">
+                        <div class="col-6 pe-0 me-0 ">
+                            <p class="form-label fw-bold">Solicitante:</p>
+                        </div>
+                        <div class="col-4 ps-0 ms-0">
+                            <p> {{practica.solicitante}}</p>
+                        </div>
+                    </div>
+                    <div class="row mx-auto mt-3">
+                        <div class="col-6 pe-0 me-0 ">
+                            <label for="exampleInputEmail1" class="form-label fw-bold">Materiales:</label>
+                        </div>
+                        <div class="col-4 ps-0 ms-0">
+                            
+                            <ul>
+                                <li>Lista </li>
+                                <li>de</li>
+                                <li> Materiales</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    </form>
+                </div>
+           </div>
+            
+        </div>
+    </div>
+   
+</div>
+{% endblock %}
