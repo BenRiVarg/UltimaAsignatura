@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class MaterialesPractica(models.Model):
@@ -8,19 +7,15 @@ class MaterialesPractica(models.Model):
     hora=models.CharField(max_length=15)
     solicitante=models.TextField()
     grupo=models.CharField(max_length=4)
-    """material=ArrayField(
-        ArrayField(
-            models.TextField(max_length=100, blank=True),
-            size=8,
-        ),)"""
+    material= models.TextField()
 
 class Empleados(models.Model):
     id=models.AutoField(primary_key=True,verbose_name="Clave")
     foto = models.ImageField(null=True,upload_to="fotos",verbose_name="Fotografía")
-    nombreEmpleado=models.TextField()
-    skills=models.CharField(max_length=15)
-    telefono=models.CharField(max_length=11)
-    domicilio=models.TextField()
+    nombreEmpleado=models.TextField(verbose_name="Nombre del Empleado")
+    skills=models.CharField(max_length=15,verbose_name="Área")
+    telefono=models.CharField(max_length=11 ,verbose_name="Teléfono")
+    domicilio=models.TextField(verbose_name="Domicilio")
 
     class Meta:
         verbose_name = "Empleado"

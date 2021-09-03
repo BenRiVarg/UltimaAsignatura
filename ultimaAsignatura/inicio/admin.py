@@ -6,11 +6,9 @@ from .models import Empleados
 # Register your models here.
 
 class AdministrarMP(admin.ModelAdmin):
-    #readonly_fields=('id')
     list_display=('nombrePractica','grupo','hora','solicitante')
     search_fields=('nombrePractica','grupo','hora','solicitante')
-       # date_hierarchy='created'
-    #list_filter=('carrera','turno')
+  
 
     
 

@@ -16,6 +16,7 @@ def dash(request):
 def crear(request):
     if request.method=='POST':
         form= MaterialesForm(request.POST)
+        print(request.POST)
         if form.is_valid():   #Si los datos recibidos son correctos
             form.save()
             registros=MaterialesPractica.objects.all()

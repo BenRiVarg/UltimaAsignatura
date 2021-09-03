@@ -4,4 +4,4 @@ from .models import MaterialesPractica
 class MaterialesForm(forms.ModelForm):
     class Meta:
         model= MaterialesPractica
-        fields=['nombrePractica','hora','solicitante','grupo']
+        fields=['nombrePractica','hora','solicitante','grupo','material']
