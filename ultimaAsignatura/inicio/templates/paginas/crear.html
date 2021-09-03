@@ -9,7 +9,7 @@
             <p class="display-4">Creación de una Nueva Práctica</p>
            <div class="row">
                <div class="col">
-                    <form action="{% url 'Crear'%}" method="POST" role="form" >
+                    <form action="{% url 'Crear'%}" method="POST" role="form" onsubmit="return validateForm()" >
                         {% csrf_token %}
                     
                     <div class="row mx-auto mt-3">
@@ -17,7 +17,7 @@
                             <label for="exampleInputEmail1" class="form-label fw-bold">Grupo:</label>
                         </div>
                         <div class="col-4 ps-0 ms-0">
-                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="grupo">
+                            <input  class="form-control" aria-describedby="emailHelp"  required name="grupo" id="campo">
                         </div>
                     </div>
                     <div class="row mx-auto mt-3">
@@ -25,7 +25,7 @@
                             <label for="exampleInputEmail1" class="form-label fw-bold">Nombre Práctica:</label>
                         </div>
                         <div class="col-4 ps-0 ms-0">
-                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nombrePractica">
+                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="nombrePractica">
                         </div>
                     </div>
                     <div class="row mx-auto mt-3">
@@ -33,7 +33,7 @@
                             <label for="exampleInputEmail1" class="form-label fw-bold ">Hora:</label>
                         </div>
                         <div class="col-4 ps-0 ms-0">
-                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="hora">
+                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="hora">
                         </div>
                     </div>
                     <div class="row mx-auto mt-3">
@@ -41,7 +41,7 @@
                             <label for="exampleInputEmail1" class="form-label fw-bold">Solicitante:</label>
                         </div>
                         <div class="col-4 ps-0 ms-0">
-                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="solicitante">
+                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="solicitante">
                         </div>
                     </div>
                     <div class="row mx-auto mt-3">
@@ -49,10 +49,11 @@
                             <label for="exampleInputEmail1" class="form-label fw-bold">Materiales:</label>
                         </div>
                         <div class="col-4 ps-0 ms-0">
-                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="material">
+                            <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required name="material">
                         </div>
                     </div>
                     <div class="d-flex justify-content-end  mt-3 me-5 pe-5">
+                       <!--<button type="button"onclick="validateForm()">Prsueba</button>-->
                         <input type="submit" class="btn btn-info btn-lg" value="Crear">
                     </div>
                     
@@ -64,4 +65,20 @@
     </div>
    
 </div>
+{% endblock %}
+{% block scripts %}
+<script>
+    
+    function validateForm() {
+        
+      var campo=document.getElementById("campo").value;
+      
+      if (campo.length >= 5) {
+        alert("El grupo no debe de exceder de 4 caracteres");
+        return false;
+      }
+      
+    }
+    
+</script>
 {% endblock %}
